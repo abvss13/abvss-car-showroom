@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 
-const CarCard = ({ car }) => {
+const CarCard = ({ car, onDelete }) => {
   const [showDetails, setShowDetails] = useState(false);
 
   return (
-    <div className={`car-card${showDetails ? " active" : ""}`} onClick={() => setShowDetails(!showDetails)}>
+    <div className={`car-card${showDetails ? " active" : ""}`}>
       <img src={car.img_url} alt={car.model} />
       <h3>{car.brand} - {car.model}</h3>
       {showDetails && (
@@ -17,7 +17,10 @@ const CarCard = ({ car }) => {
           <p>Release Date: {car.release_date}</p>
         </div>
       )}
-      <div className={`show-details-btn${showDetails ? " active" : ""}`}>{showDetails ? "Hide Details" : "Show Details"}</div>
+      <div className={`show-details-btn${showDetails ? " active" : ""}`} onClick={() => setShowDetails(!showDetails)}>
+        {showDetails ? "Hide Details" : "Show Details"}
+      </div>
+      <button className="delete-btn" onClick={() => onDelete(car.model)}>Delete</button>
     </div>
   );
 };
@@ -80,6 +83,13 @@ const CarApp = () => {
     }
   }, [searchTerm, cars]);
 
+  
+  const handleDeleteCar = (model) => {
+    const updatedCars = cars.filter((car) => car.model !== model);
+    setCars(updatedCars);
+    setFilteredCars(updatedCars);
+  };
+
   return (
     <div className="car-app">
       <div className="filter-section">
@@ -107,7 +117,7 @@ const CarApp = () => {
       </div>
       <div className="car-list">
         {filteredCars.map((car) => (
-          <CarCard key={car.model} car={car} />
+          <CarCard key={car.model} car={car} onDelete={handleDeleteCar} />
         ))}
       </div>
     </div>
