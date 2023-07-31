@@ -11,7 +11,7 @@ const CarApp = () => {
 
 export default CarApp;
 
-// CarApp.js
+
 import React, { useState, useEffect } from "react";
 
 const CarCard = ({ car }) => {
