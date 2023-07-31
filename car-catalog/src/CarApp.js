@@ -78,4 +78,46 @@ const CarApp = () => {
 
 export default CarApp;
 
+// CarApp.js
+import React, { useState, useEffect } from "react";
+
+const CarCard = ({ car }) => {
+  // Same as before
+};
+
+const CarApp = () => {
+  const [brandFilter, setBrandFilter] = useState("");
+  const [filteredCars, setFilteredCars] = useState([]);
+
+  useEffect(() => {
+   
+  }, []);
+
+  useEffect(() => {
+    
+    if (brandFilter) {
+      const filtered = cars.filter((car) => car.brand === brandFilter);
+      setFilteredCars(filtered);
+    } else {
+      setFilteredCars(cars);
+    }
+  }, [brandFilter, cars]);
+
+  return (
+    <div className="car-app">
+      <div className="filter-section">
+        {}
+      </div>
+      <div className="car-list">
+        {filteredCars.map((car) => (
+          <CarCard key={car.model} car={car} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default CarApp;
+
+
 
