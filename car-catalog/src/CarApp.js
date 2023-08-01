@@ -93,7 +93,7 @@ const CarApp = () => {
   return (
     <div className="car-app">
       <header className="app-header">
-        <h1>Abvss Car Catalog</h1>
+        <h1>𝐀𝐛𝐯𝐬𝐬 𝐂𝐚𝐫 𝐂𝐚𝐭𝐚𝐥𝐨𝐠</h1>
       </header>
       <div className="filter-section">
         <input

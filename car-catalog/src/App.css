@@ -1,0 +1,54 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(45deg, #c8c7db, #252928e0);
+  }
+  
+  h1 {
+    background-color: #475355;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .app-header {
+    background-color: #0d0f0fc7;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .car-app {
+    padding: 20px;
+  }
+  
+  .filter-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .filter-section input,
+  .filter-section select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .filter-section input::placeholder,
+  .filter-section select option {
+    color: #999;
+  }
+  
+  .car-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
