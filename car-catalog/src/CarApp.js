@@ -31,6 +31,7 @@ const CarApp = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortBy, setSortBy] = useState("");
   const [brandFilter, setBrandFilter] = useState("");
+  
 
   useEffect(() => {
     // Fetch data from the API
@@ -83,7 +84,6 @@ const CarApp = () => {
     }
   }, [searchTerm, cars]);
 
-  
   const handleDeleteCar = (model) => {
     const updatedCars = cars.filter((car) => car.model !== model);
     setCars(updatedCars);
@@ -92,6 +92,9 @@ const CarApp = () => {
 
   return (
     <div className="car-app">
+      <header className="app-header">
+        <h1>Abvss Car Catalog</h1>
+      </header>
       <div className="filter-section">
         <input
           type="text"
